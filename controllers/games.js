@@ -15,8 +15,19 @@ function create(req, res) {
   })
 }
 
+function index(req, res) {
+  Game.find({})
+  .then(games => {
+    res.render("index", {
+      title: "Games",
+      games
+    })
+  })
+}
+
 
 export {
   newGame as new,
   create,
+  index,
 }
