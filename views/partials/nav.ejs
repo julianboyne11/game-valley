@@ -25,4 +25,14 @@
         data-logo_alignment="left"
       ></div>
     <% } %>
+      <!-- <h1>hello, <%= user ? user.profile.name : "friend" %></h1> -->
+      <% if (user?.profile.avatar) { %>
+        <div id="avatar-container">
+          <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+          />
+        </div>
+      <% } %>
+    
   </nav>
