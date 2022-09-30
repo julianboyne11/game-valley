@@ -6,9 +6,9 @@
   <h1><%= title %></h1>
   <form id="new-form" action="/games" method="POST">
     <label for="title-input">Title:</label>
-    <input type="text" name="title" id="title-input">
+    <input type="text" name="title" id="title-input" placeholder="Add a Title" required>
     <label for="genre-input">Genre:</label>
-    <select name="genre" id="category-select">
+    <select name="genre" id="category-select" required>
       <option value="Shooters">Shooters(FPS and TPS)
       </option>
       <option value="Simulation and sports">Simulation and sports</option>
@@ -20,7 +20,7 @@
     <label for="release-year-input">Release Year:</label>
     <input type="date" name="releaseDate" id="release-year-input">
     <label for="description-input">Description:</label>
-    <textarea name="description" id="description-input"></textarea>
+    <textarea name="description" placeholder="About the Game..." id="description-input"></textarea>
     <button type="submit">Add Game</button>
   </form>
 </main>

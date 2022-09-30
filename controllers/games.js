@@ -7,7 +7,16 @@ function newGame(req, res) {
   })
 }
 
+function create(req, res) {
+  console.log(req.body)
+  Game.create(req.body)
+  .then(game => {
+    res.redirect("/games/new")
+  })
+}
+
 
 export {
-  newGame as new
+  newGame as new,
+  create,
 }
