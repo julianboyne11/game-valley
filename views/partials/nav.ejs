@@ -4,6 +4,12 @@
 </head>
 <body>
   <nav>
+    <a 
+      href="/games/new"
+      <%- title === 'Add Game' ? 'class="active"' : '' %>
+    >
+      ADD GAME
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -25,12 +31,6 @@
         data-logo_alignment="left"
         ></div>
         <% } %>
-        <a 
-          href="/games/new"
-          <%- title === 'Add Game' ? 'class="active"' : '' %>
-        >
-          ADD GAME
-        </a>
         <!-- <h1>hello, <%= user ? user.profile.name : "friend" %></h1> -->
         <% if (user?.profile.avatar) { %>
           <div id="avatar-container">

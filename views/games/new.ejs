@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/games/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/games" method="POST">
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" id="title-input">
+    <label for="genre-input">Genre:</label>
+    <select name="genre" id="category-select">
+      <option value="Shooters">Shooters(FPS and TPS)
+      </option>
+      <option value="Simulation and sports">Simulation and sports</option>
+      <option value="Multiplayer">Multiplayer online battle arena (MOBA)</option>
+      <option value="Role-playing">Role-playing (RPG, ARPG, and More)</option>
+      <option value="Action-adventure">Action-adventure</option>
+      <option value="Survival and horror">Survival and horror</option>
+    </select>
+    <label for="release-year-input">Release Year:</label>
+    <input type="date" name="releaseDate" id="release-year-input">
+    <label for="description-input">Description:</label>
+    <textarea name="description" id="description-input"></textarea>
+    <button type="submit">Add Game</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
