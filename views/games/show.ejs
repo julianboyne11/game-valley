@@ -3,24 +3,21 @@
 
 <h1><%= title %></h1>
   <section>
-    <div><%= game.title %></div>
-
-    <div><%= game.genre %></div>
-
-    <div><%= game.releaseDate %></div>
-
-    <div><%= game.description %></div>
-
-    <div><%= game.consoles %></div>
-
-      <form
-        action="/games/<%= game._id %>?_method=DELETE"
-        class="delete-form"
-        method="POST"
-      >
-        <button type="submit">Delete</button>
-      </form>
-    </div>
+    <div class="game- container">
+      <div><%= game.title %></div>
+      <div><%= game.genre %></div>
+      <div><%= game.releaseDate %></div>
+      <div><%= game.description %></div>
+      <div><%= game.consoles %></div>
+  </div>
+  <% if (game.owner.equals(user?.profile._id)) { %>
+    <a href="/games/<%= game._id %>/edit">
+      <button class="btn">Edit Game</button>
+    </a>
+    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete Game</button>
+    </form>
+  <% } %>
   </section>
 </main>
 

@@ -8,9 +8,10 @@ function newGame(req, res) {
 }
 
 function create(req, res) {
-  console.log(req.body)
+  req.body.owner = req.user.profile._id
   Game.create(req.body)
   .then(game => {
+    console.log(game);
     res.redirect("/games/new")
   })
 }
@@ -48,10 +49,15 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  
+}
+
 
 export {
   newGame as new,
   create,
   index,
   show,
+  edit,
 }
