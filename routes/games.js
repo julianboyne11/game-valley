@@ -9,6 +9,8 @@ router.get("/:id", isLoggedIn, gamesCtrl.show)
 router.get("/:id/edit", isLoggedIn, gamesCtrl.edit)
 router.post("/", isLoggedIn, gamesCtrl.create)
 router.put("/:id", isLoggedIn, gamesCtrl.update)
+router.delete("/:id", isLoggedIn, gamesCtrl.delete)
+
 
 
 export {

@@ -15,7 +15,7 @@ function create(req, res) {
   Game.create(req.body)
   .then(game => {
     console.log(game);
-    res.redirect("/games/new")
+    res.redirect("/games/show")
   })
 }
 
@@ -84,6 +84,17 @@ function update(req, res) {
   })
 }
 
+function deleteGame(req, res) {
+  Game.findByIdAndDelete(req.params.id)
+  .then(game => {
+    res.redirect("/games/new")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 export {
   newGame as new,
@@ -92,4 +103,5 @@ export {
   show,
   edit,
   update,
+  deleteGame as delete,
 }
