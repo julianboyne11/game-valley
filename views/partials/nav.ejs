@@ -5,6 +5,12 @@
 <body>
   <nav>
     <a 
+      href="/"
+      <%- title === 'Games' ? 'class="active"' : '' %>
+    >
+      All GAMES
+    </a>
+    <a 
       href="/games/new"
       <%- title === 'Add Game' ? 'class="active"' : '' %>
     >

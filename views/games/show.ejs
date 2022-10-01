@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1><%= title %></h1>
+  <section>
+    <div><%= game.title %></div>
+
+    <div><%= game.genre %></div>
+
+    <div><%= game.releaseDate %></div>
+
+    <div><%= game.description %></div>
+
+    <div><%= game.consoles %></div>
+
+      <form
+        action="/games/<%= game._id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+      >
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

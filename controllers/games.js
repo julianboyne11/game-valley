@@ -25,9 +25,33 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Game.findById(req.params.id)
+  .populate("consoles")
+  .then(game => {
+    Console.find({_id: {$nin: game.consoles}})
+    .then(consoles => {
+      res.render("games/show", {
+        title: `${game.title}`,
+        game,
+        consoles
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 export {
   newGame as new,
   create,
   index,
+  show,
 }
