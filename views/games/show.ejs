@@ -1,14 +1,15 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/games/show.css" />
 <%- include('../partials/nav') %>
-<label id="title-edit">
-<h1><%= title %></h1>
-<% if (game.owner.equals(user?.profile._id)) { %>
-  <a href="/games/<%= game._id %>/edit">
+<main>
+  <label id="title-edit">
+    <h1><%= title %></h1>
+    <% if (game.owner.equals(user?.profile._id)) { %>
+    <a href="/games/<%= game._id %>/edit">
     <button id="edit-button" class="btn">Edit Game</button>
-  </a>
+    </a>
   <% } %>
-</label>
+  </label>
   <section>
     <div class="game-container">
       <div id="genre"><%= game.genre %></div>
@@ -16,10 +17,70 @@
       <div id="description"><%= game.description %></div>
       <div id="description"><%= game.consoles %></div>
       <% if (game.owner.equals(user?.profile._id)) { %>
-        <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete Game</button>
+      <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete Game</button>
+      </form>
+      <% } %>
+    </div>
+  </section>
+  <section>
+    <div id="comment-container">
+      <h2>Comments</h2>
+        <form 
+        id="add-comment-form"
+        action="/games/<%= game._id %>/comments"
+        method="POST"
+        >
+        <div>
+          <label for="content-textarea">Comment:</label>
+          <textarea name="content" id="content-textarea"></textarea>
+        </div>
+        <div>
+          <label for="rating-select">Rating:</label>
+          <select name="rating" id="rating-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+          </select>
+        </div>
+          <button type="submit">Add Comment</button>
         </form>
-        <% } %>
+      </div>
+      <div id="comments">
+      <% if (game.comments.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Date</th>
+              <th>Comment</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let total = 0 %> 
+            <% game.comments.forEach(function(comment) { %>
+              <% total += comment.rating %>
+              <tr>
+                <td><%= game.owner ? game.owner.name : "Unknown" %>: </td>
+                <td><%= comment.createdAt.toLocaleDateString() %></td>
+                <td><%= comment.content %></td>
+                <td><%= comment.rating %></td>
+              </tr>
+            <% }) %>
+            <tr>
+              <td colspan="2"></td>
+              <td>
+                <strong><%= (total / game.comments.length).toFixed(1) %></strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h3>No Comments Yet</h3>
+      <% } %>
     </div>
   </section>
 </main>

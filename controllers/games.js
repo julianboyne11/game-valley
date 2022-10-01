@@ -32,6 +32,7 @@ function index(req, res) {
 function show(req, res) {
   Game.findById(req.params.id)
   .populate("consoles")
+  .populate("owner")
   .then(game => {
     Console.find({_id: {$nin: game.consoles}})
     .then(consoles => {
@@ -95,6 +96,26 @@ function deleteGame(req, res) {
   })
 }
 
+function createComment(req, res) {
+  Game.findById(req.params.id)
+  .populate("owner")
+  .then(game => {
+    game.comments.push(req.body)
+    game.save()
+    .then(() => {
+      res.redirect(`/games/${game._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 export {
   newGame as new,
@@ -104,4 +125,5 @@ export {
   edit,
   update,
   deleteGame as delete,
+  createComment,
 }
