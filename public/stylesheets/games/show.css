@@ -1,0 +1,34 @@
+
+body {
+  margin: 0
+}
+
+.game-container, h1 {
+  max-width: 300px;
+  border: 1px solid green;
+  box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
+  0 0  0 2px rgb(124, 122, 122),
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
+  text-align: center;
+  margin-top: 50px;
+  padding-right: 25px;
+  border-radius: 15px;
+}
+
+.game-container > div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  padding-left: 20px;
+  margin-bottom: 35px;
+}
+
+#title-edit {
+  display: flex;
+}
+
+#edit-button {
+  margin-top: 65px;
+  margin-left: 20px;
+}

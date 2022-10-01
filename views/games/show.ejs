@@ -1,23 +1,26 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/games/show.css" />
 <%- include('../partials/nav') %>
-
+<label id="title-edit">
 <h1><%= title %></h1>
-  <section>
-    <div class="game- container">
-      <div><%= game.title %></div>
-      <div><%= game.genre %></div>
-      <div><%= game.releaseDate %></div>
-      <div><%= game.description %></div>
-      <div><%= game.consoles %></div>
-  </div>
-  <% if (game.owner.equals(user?.profile._id)) { %>
-    <a href="/games/<%= game._id %>/edit">
-      <button class="btn">Edit Game</button>
-    </a>
-    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete Game</button>
-    </form>
+<% if (game.owner.equals(user?.profile._id)) { %>
+  <a href="/games/<%= game._id %>/edit">
+    <button id="edit-button" class="btn">Edit Game</button>
+  </a>
   <% } %>
+</label>
+  <section>
+    <div class="game-container">
+      <div id="genre"><%= game.genre %></div>
+      <div id="releaseDate"><%= game.releaseDate %></div>
+      <div id="description"><%= game.description %></div>
+      <div id="description"><%= game.consoles %></div>
+      <% if (game.owner.equals(user?.profile._id)) { %>
+        <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Delete Game</button>
+        </form>
+        <% } %>
+    </div>
   </section>
 </main>
 
