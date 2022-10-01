@@ -50,7 +50,14 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  
+  Game.findById(req.params.id)
+  .populate("owner")
+  .then(game => {
+    res.render("games/edit", {
+      game,
+      title: `Edit ${game.title}`
+    })
+  })
 }
 
 

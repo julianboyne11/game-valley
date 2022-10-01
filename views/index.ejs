@@ -6,11 +6,12 @@
   <table>
     <tbody>
       <% games.forEach(game => { %>
-      
+      <div class="game-view-container">
         <tr>
           <td><a href="games/<%= game._id %>"><%= game.title %></a></td>
           <td><%= game.genre %></td>
         </tr>
+      </div>
         <% }) %>
       
     </tbody>
