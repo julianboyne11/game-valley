@@ -8,6 +8,7 @@ router.get("/new", isLoggedIn, gamesCtrl.new)
 router.get("/:id", isLoggedIn, gamesCtrl.show)
 router.get("/:id/edit", isLoggedIn, gamesCtrl.edit)
 router.post("/", isLoggedIn, gamesCtrl.create)
+router.put("/:id", isLoggedIn, gamesCtrl.update)
 
 
 export {

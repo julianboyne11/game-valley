@@ -8,6 +8,9 @@ function newGame(req, res) {
 }
 
 function create(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
   req.body.owner = req.user.profile._id
   Game.create(req.body)
   .then(game => {
@@ -60,6 +63,27 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  Game.findById(req.params.id)
+  .then(game => {
+    if (game.owner.equals(req.user.profile._id)){
+      game.update(req.body)
+      .then(updatedGame => {
+        res.redirect(`/games/${game._id}`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 export {
   newGame as new,
@@ -67,4 +91,5 @@ export {
   index,
   show,
   edit,
+  update,
 }

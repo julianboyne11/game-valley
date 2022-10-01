@@ -3,10 +3,12 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
+  <h1><%= game.title %></h1>
+  <h3>Hey <%= game.owner ? game.owner.name : "Stranger" %>, are you sure you want to edit <%= game.title %>?</h3>
   <form id="new-form" action="/games/<%= game._id %>?_method=PUT" method="POST">
     <label for="genre-input">Genre:</label>
     <select name="genre" id="category-select" required>
+      <option value="<%= game.genre %>"><%= game.genre %></option>
       <option value="Shooters">Shooters(FPS and TPS)
       </option>
       <option value="Simulation and sports">Simulation and sports</option>
