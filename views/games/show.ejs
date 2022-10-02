@@ -5,10 +5,11 @@
   <label id="title-edit">
     <h1><%= title %></h1>
     <% if (game.owner.equals(user?.profile._id)) { %>
-    <a href="/games/<%= game._id %>/edit">
-    <button id="edit-button" class="btn">Edit Game</button>
-    </a>
-  <% } %>
+      <a href="/games/<%= game._id %>/edit">
+        <button id="edit-button" class="btn">Edit Game</button>
+      </a>
+      <% } %>
+      <p>Created by: <a href="/profiles/<%= user.profile._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
   </label>
   <section>
     <div class="game-container">
@@ -16,10 +17,10 @@
       <div id="releaseDate"><%= game.releaseDate %></div>
       <div id="description"><%= game.description %></div>
 
-      <div id="consoles">For:</div>
       <ul>
+      <div id="consoles">For:</div>
         <% game.consoles.forEach(console => { %>
-          <li><%= console.name %> </li>
+          <li><%= console.name %></li>
         <% }) %>  
       </ul>
       <% if (game.owner.equals(user?.profile._id)) { %>

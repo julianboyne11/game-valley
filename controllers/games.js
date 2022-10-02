@@ -1,5 +1,6 @@
 import { Game } from "../models/game.js"
 import { Console } from "../models/console.js"
+import { Profile } from "../models/profile.js"
 
 function newGame(req, res) {
   res.render("games/new", {
@@ -36,10 +37,14 @@ function show(req, res) {
   .then(game => {
     Console.find({_id: {$nin: game.consoles}})
     .then(consoles => {
-      res.render("games/show", {
-        title: `${game.title}`,
-        game,
-        consoles
+      Profile.findById(req.params.id)
+      .then(profile => {
+        res.render("games/show", {
+          title: `${game.title}`,
+          game,
+          consoles,
+          profile,
+        })
       })
     })
     .catch(err => {
@@ -128,6 +133,8 @@ function addToConsoles(req, res) {
 }
 
 
+
+
 export {
   newGame as new,
   create,
@@ -138,4 +145,5 @@ export {
   deleteGame as delete,
   createComment,
   addToConsoles,
+  
 }

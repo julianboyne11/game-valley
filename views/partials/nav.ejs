@@ -4,18 +4,26 @@
 </head>
 <body>
   <nav>
-    <a 
+    <% if (user) { %>
+      <a 
+      href="/profiles/<%= user.profile._id %>"
+      <%- title === 'Profile Detail' ? 'class="active"' : '' %>
+      >
+      MY PROFILE
+    </a>
+      <a 
       href="/"
       <%- title === 'Games' ? 'class="active"' : '' %>
-    >
+      >
       All GAMES
     </a>
     <a 
-      href="/games/new"
-      <%- title === 'Add Game' ? 'class="active"' : '' %>
+    href="/games/new"
+    <%- title === 'Add Game' ? 'class="active"' : '' %>
     >
-      ADD GAME
-    </a>
+    ADD GAME
+  </a>
+  <% } %>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
