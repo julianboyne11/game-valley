@@ -116,6 +116,17 @@ function createComment(req, res) {
   })
 }
 
+function addToConsoles(req, res) {
+  Game.findById(req.params.id)
+    .then(game => {
+      game.consoles.push(req.body.consoleId)
+      game.save()
+      .then(() => {
+        res.redirect(`/games/${game._id}`)
+      })
+    })
+}
+
 
 export {
   newGame as new,
@@ -126,4 +137,5 @@ export {
   update,
   deleteGame as delete,
   createComment,
+  addToConsoles,
 }
