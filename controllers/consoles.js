@@ -14,7 +14,14 @@ function newConsole(req, res) {
   })
 }
 
+function create(req, res) {
+  Console.create(req.body)
+  .then(console => {
+    res.redirect("/consoles/new")
+  })
+}
 
 export {
-  newConsole,
+  newConsole as new,
+  create,
 }
