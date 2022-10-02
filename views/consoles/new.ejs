@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+	<h1><%= title %></h1>
+  <p>Please ensure that the Console is not in the dropdown
+    <select>
+      <% consoles.forEach(function(console) { %>
+        <option><%= console.name %></option>
+      <% }) %>
+    </select>
+  </p>
+  <form id="add-console-form" action="/consoles" method="POST">
+    <label for="name-input">Name:</label>
+    <input type="text" name="name" id="name-input">
+    <button type="submit">Add Console</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
