@@ -9,7 +9,7 @@
         <button id="edit-button" class="btn">Edit Game</button>
       </a>
       <% } %>
-      <p>Created by: <a href="/profiles/<%= user.profile._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
+      <p>Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
   </label>
   <section>
     <div class="game-container">
