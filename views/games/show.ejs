@@ -45,6 +45,10 @@
         ADD A CONSOLE
       </a>
     <% } %>
+    <h4>Liked the game?</h4>
+    <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
+      <button type="submit">Like</button>
+    </form>
   </section>
   <section>
     <div id="comment-container">

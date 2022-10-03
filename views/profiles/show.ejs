@@ -9,6 +9,10 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
+  <div><%= profile.name %></div>
+  <div>games liked: <% profile.likeGames.forEach(game => { %>
+    <p><%= game.title %></p>
+  <% }) %> <div>
 </main>
 
 <%- include('../partials/footer') %>

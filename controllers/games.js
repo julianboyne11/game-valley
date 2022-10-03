@@ -37,8 +37,9 @@ function show(req, res) {
   .then(game => {
     Console.find({_id: {$nin: game.consoles}})
     .then(consoles => {
-      Profile.findById(req.params.id)
+      Profile.findById(req.user.profile._id)
       .then(profile => {
+        console.log(profile, "Profile");
         res.render("games/show", {
           title: `${game.title}`,
           game,
@@ -135,6 +136,8 @@ function addToConsoles(req, res) {
 
 
 
+
+
 export {
   newGame as new,
   create,
@@ -145,5 +148,4 @@ export {
   deleteGame as delete,
   createComment,
   addToConsoles,
-  
 }
