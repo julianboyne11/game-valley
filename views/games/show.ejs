@@ -31,22 +31,30 @@
           </form>
           <% } %>
         </div>
-      <% if (game.owner.equals(user?.profile._id)) { %>
-        <form id="add-consoles" action="/games/<%= game._id %>/consoles" method="POST">
-          <select name="consoleId">
-            <% consoles.forEach(console => { %>
-              <option value="<%= console._id %>"><%= console.name %></option>
-            <% }) %>
-          </select>
-          <button type="submit">Add Console to Game</button>
-        </form>
-        <a 
-          href="/consoles/new"
-          <%- title === 'Add Console' ? 'class="active"' : '' %>
-        >
-          ADD A CONSOLE
-        </a>
-      <% } %>
+
+        <div class="consoles">
+          <div>
+
+            <% if (game.owner.equals(user?.profile._id)) { %>
+              <form id="add-consoles" action="/games/<%= game._id %>/consoles" method="POST">
+                <select name="consoleId">
+                  <% consoles.forEach(console => { %>
+                    <option value="<%= console._id %>"><%= console.name %></option>
+                    <% }) %>
+                  </select>
+                  <button type="submit">Add Console to Game</button>
+                </form>
+                <div id="add-console">
+                <a 
+                  href="/consoles/new"
+                  <%- title === 'Add Console' ? 'class="active"' : '' %>
+                >
+                  ADD A CONSOLE
+                </a>
+              </div>
+              <% } %>
+          </div>
+          </div>
       <h4>Liked the game?</h4>
       <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
         <button type="submit">Like</button>
