@@ -1,30 +1,31 @@
 <%- include('./partials/html-head') %>
-
+<link rel="stylesheet" href="/stylesheets/games/index.css" />
 <%- include('./partials/nav') %>
 
 <main>
   <h1>Games</h1>
   <table>
     <tbody>
-      <% games.forEach(game => { %>
-        <div class="card" style="width: 18rem;">
+      <div class="card-container">
+        <% games.forEach(game => { %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h3 class="card-title"><%= game.title %></h3>
           
-          <div class="card-body">
-            <h5 class="card-title"><%= game.title %></h5>
-          
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= game.genre %></li>
+              <li class="list-group-item"><%= game.releaseDate %></li>
+            </ul>
+            <!-- <p class="card-text"><%= game.comments %></p> -->
+            <div class="card-body">
+              <a href="games/<%= game._id %>" class="card-link">See more</a>
+            </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= game.genre %></li>
-            <li class="list-group-item"><%= game.releaseDate %></li>
-          </ul>
-          <p class="card-text"><%= game.comments %></p>
-          <div class="card-body">
-            <a href="games/<%= game._id %>" class="card-link">See more</a>
-          </div>
-        </div>
-      <% }) %>
-      </tbody>
-    </table>
-  </main>
+        <% }) %>
+      </div>
+    </tbody>
+  </table>
+ </main>
   
   <%- include('./partials/footer') %>

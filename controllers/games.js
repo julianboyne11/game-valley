@@ -39,7 +39,6 @@ function show(req, res) {
     .then(consoles => {
       Profile.findById(req.user.profile._id)
       .then(profile => {
-        console.log(profile, "Profile");
         res.render("games/show", {
           title: `${game.title}`,
           game,
