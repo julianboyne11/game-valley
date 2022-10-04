@@ -22,7 +22,7 @@ main {
   border: 2px solid limegreen;
   display: grid;
   width: 300px;
-  background-color: rgb(141, 142, 143);
+  background-color: rgb(114, 114, 114);
   border-radius: 10px;
   color: black;
   padding: 10px;
@@ -35,4 +35,13 @@ li {
 .card {
   width: 85%;
 }
+
+.card-link {
+  color: limegreen
+}
+
+.card-title {
+  font-weight: bold;
+}
+
 

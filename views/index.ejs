@@ -11,13 +11,12 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h3 class="card-title"><%= game.title %></h3>
-          
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><%= game.genre %></li>
               <li class="list-group-item"><%= game.releaseDate %></li>
             </ul>
-            <!-- <p class="card-text"><%= game.comments %></p> -->
+            <!-- <p class="card-text"><%= game.comments.content %></p> -->
             <div class="card-body">
               <a href="games/<%= game._id %>" class="card-link">See more</a>
             </div>
