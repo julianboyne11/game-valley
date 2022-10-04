@@ -50,11 +50,17 @@ body > nav {
 
 }
 
-/* nav > i {
+nav > i {
   width: 45px;
   object-fit: contain;
   margin-right: auto;
-} */
+}
+
+#profile-img {
+  border-radius: 40%;
+  height: 30px;
+  margin-bottom: 130px;
+}
 
 nav > a {
   margin: 20px;
@@ -81,3 +87,4 @@ nav > a.active {
 .fas::before {
   font-family: "Font Awesome 5 Free";
 }
+

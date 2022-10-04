@@ -7,9 +7,16 @@
     <% if (user) { %>
       <a 
       href="/profiles/<%= user.profile._id %>"
-      <%- title === 'Profile Detail' ? 'class="active"' : '' %>
+      <%- title === 'Profile Detail' ? 'class="active"' : '' %> 
       >
-      MY PROFILE
+      <% if (user?.profile.avatar) { %>
+        <div id="avatar-container">
+          <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+          />
+        </div>
+        <% } %>
     </a>
       <a 
       href="/"
@@ -45,13 +52,6 @@
         data-logo_alignment="left"
         ></div>
         <% } %>
-        <% if (user?.profile.avatar) { %>
-          <div id="avatar-container">
-            <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-            />
-          </div>
-          <% } %>
+      
     
   </nav>

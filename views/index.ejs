@@ -1,4 +1,5 @@
 <%- include('./partials/html-head') %>
+
 <%- include('./partials/nav') %>
 
 <main>
@@ -6,16 +7,24 @@
   <table>
     <tbody>
       <% games.forEach(game => { %>
-      <div class="game-view-container">
-        <tr>
-          <td><a href="games/<%= game._id %>"><%= game.title %></a></td>
-          <td><%= game.genre %></td>
-        </tr>
-      </div>
-        <% }) %>
-      
-    </tbody>
-  </table>
-</main>
-
-<%- include('./partials/footer') %>
+        <div class="card" style="width: 18rem;">
+          
+          <div class="card-body">
+            <h5 class="card-title"><%= game.title %></h5>
+          
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= game.genre %></li>
+            <li class="list-group-item"><%= game.releaseDate %></li>
+          </ul>
+          <p class="card-text"><%= game.comments %></p>
+          <div class="card-body">
+            <a href="games/<%= game._id %>" class="card-link">See more</a>
+          </div>
+        </div>
+      <% }) %>
+      </tbody>
+    </table>
+  </main>
+  
+  <%- include('./partials/footer') %>

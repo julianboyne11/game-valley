@@ -1,7 +1,7 @@
 import { Profile } from "../models/profile.js"
 import { Game } from "../models/game.js"
 
-function showMyProfile(req, res) {
+function showProfile(req, res) {
   Profile.find({})
   .populate("likeGames")
   .then(profiles => {
@@ -49,7 +49,7 @@ function likeGame(req, res) {
 
 
 export {
-  showMyProfile,
+  showProfile,
   likeGame,
   
 }
