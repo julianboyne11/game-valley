@@ -18,7 +18,7 @@
       <option value="Survival and horror">Survival and horror</option>
     </select>
     <label for="release-year-input">Release Year:</label>
-    <input type="text" name="releaseDate" id="release-year-input" pattern="/[1-12][/][1-31][/][1980-2050]\" autocomplete="off" value="<%= game.releaseDate %>">
+    <input type="date" name="releaseDate" id="release-year-input">
     <label for="description-input">Description:</label>
     <textarea name="description" id="description-input"><%= game.description %></textarea>
     <button id="save-btn" type="submit">Save Game</button>

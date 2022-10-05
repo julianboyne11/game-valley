@@ -14,9 +14,8 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><%= game.genre %></li>
-              <li class="list-group-item"><%= game.releaseDate %></li>
+              <li class="list-group-item"><%= game.releaseDate.toDateString().slice(3) %></li>
             </ul>
-            <p class="card-text"><%= game.comments.content %></p>
             <div class="card-body">
               <a href="games/<%= game._id %>" class="card-link">See more</a>
             </div>

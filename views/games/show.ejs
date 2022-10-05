@@ -12,18 +12,16 @@
             <button id="edit-button" class="btn">Edit Game</button>
           </a>
           <% } %>
-          <p>Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
+          <p id="profile">Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
 
           <div id="genre"><%= game.genre %></div>
-          <div id="releaseDate"><%= game.releaseDate %></div>
+          <div id="releaseDate"><%= game.releaseDate.toDateString().slice(3) %></div>
           <div id="description"><%= game.description %></div>
     
           <div id="consoles">For:
-            <ul>
-              <% game.consoles.forEach(console => { %>
-                <li><%= console.name %></li>
-              <% }) %>  
-            </ul>
+            <% game.consoles.forEach(console => { %>
+              <p> <%= console.name %></p>
+            <% }) %>  
           </div>
           <% if (game.owner.equals(user?.profile._id)) { %>
           <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
@@ -101,7 +99,7 @@
                 <% game.comments.forEach(function(comment) { %>
                   <% total += comment.rating %>
                   <tr>
-                    <td><%= game.owner ? game.owner.name : "Unknown" %> said...</td>
+                    <td><%= user.profile.name %> said...</td>
                     <td><%= comment.createdAt.toLocaleDateString() %></td>
                     <td><%= comment.content %></td>
                     <td><%= comment.rating %></td>

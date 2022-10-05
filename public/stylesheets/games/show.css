@@ -70,6 +70,10 @@ div {
   padding-top: 10px;
 }
 
+#comment-container {
+  min-width: 800px;
+}
+
 .info > #comment-container {
   flex-direction: column;
 }
@@ -105,6 +109,16 @@ form > #comment-area {
   text-align: center;
   padding: 5px;
   width: 100%;
+}
+
+#consoles > p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: auto;
 }
 
 tr > td {
