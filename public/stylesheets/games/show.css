@@ -102,13 +102,17 @@ form > #comment-area {
 }
 
 #comments {
-  padding: 15px;
+  text-align: center;
+  padding: 5px;
   width: 100%;
 }
 
-#comments >  {
+tr > td {
   padding: 10px;
 }
+
+
+
 
 @media only screen and (max-width: 768px) {
   .info {

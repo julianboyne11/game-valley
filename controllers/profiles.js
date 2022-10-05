@@ -25,24 +25,24 @@ function showProfile(req, res) {
 }
 
 function likeGame(req, res) {
-  
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.likeGames.push(req.params.id)
     profile.save()
     .then(() => {
-      res.redirect(`/games/${req.params.id}`)
+
+        res.redirect(`/games/${req.params.id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
     })
     .catch(err => {
       console.log(err)
       res.redirect('/')
     })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/')
-  })
-}
+  }
 
 
 

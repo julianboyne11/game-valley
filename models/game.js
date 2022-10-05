@@ -12,7 +12,7 @@ const commentSchema = new Schema({
 const gameSchema = new Schema({
   title: { type: String, required: true},
   genre: { type: String, required: true},
-  releaseDate: Date,
+  releaseDate: { type: String, match: /[1-12/][1-31/][1980-2050]\d?/},
   description: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   consoles: [{ type: Schema.Types.ObjectId, ref: "Console"}],
@@ -20,6 +20,7 @@ const gameSchema = new Schema({
 }, {
   timestamps: true,
 })
+
 
 const Game = mongoose.model('Game', gameSchema)
 

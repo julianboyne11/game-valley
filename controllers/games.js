@@ -4,7 +4,7 @@ import { Profile } from "../models/profile.js"
 
 function newGame(req, res) {
   res.render("games/new", {
-    title: "Add Game"
+    title: "Add Game",
   })
 }
 
@@ -15,8 +15,11 @@ function create(req, res) {
   req.body.owner = req.user.profile._id
   Game.create(req.body)
   .then(game => {
-    console.log(game);
-    res.redirect("/games/show")
+    res.redirect(`games/${game._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/games/new')
   })
 }
 
