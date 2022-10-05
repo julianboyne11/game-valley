@@ -24,7 +24,7 @@ function index(req, res) {
   Game.find({})
   .then(games => {
       res.render("index", {
-        title: "Games",
+        title: "Game Valley",
         games,
     })
   })

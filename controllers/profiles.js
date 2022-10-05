@@ -9,7 +9,7 @@ function showProfile(req, res) {
     .populate("likeGames")
     .then(profile => {
       const isSelf = profile._id.equals(req.user.profile._id)
-      Game.find({owner: req.user.profile._id})
+      Game.find({owner: profile._id})
       .populate("owner")
       .then(games => {
         res.render('profiles/show', {
@@ -25,8 +25,7 @@ function showProfile(req, res) {
 }
 
 function likeGame(req, res) {
-  console.log(req.body, "Body");
-  console.log(req.params.id);
+  
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.likeGames.push(req.params.id)
