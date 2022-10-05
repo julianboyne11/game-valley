@@ -12,7 +12,6 @@ function showProfile(req, res) {
       Game.find({owner: req.user.profile._id})
       .populate("owner")
       .then(games => {
-        console.log(games);
         res.render('profiles/show', {
           title: `${profile.name}'s profile`,
           isSelf,

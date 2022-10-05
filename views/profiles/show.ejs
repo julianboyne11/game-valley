@@ -16,6 +16,12 @@
     <p><%= game.title %></p>
     <% }) %>
   <div>
+  <div class="games-created"> 
+    <p>Games <%= profile.name %>'s' created:</p>
+    <% games.forEach(game => { %>
+      <p><%= game.title %></p>
+    <% }) %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
