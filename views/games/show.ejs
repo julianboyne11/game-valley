@@ -27,7 +27,7 @@
           </div>
           <% if (game.owner.equals(user?.profile._id)) { %>
           <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-            <button class="btn" type="submit">Delete Game</button>
+            <button class="btn btn btn-danger" type="submit">Delete Game</button>
           </form>
           <% } %>
         </div>

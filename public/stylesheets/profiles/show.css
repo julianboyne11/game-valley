@@ -28,8 +28,12 @@ main > div {
   font-size: 40px;
 }
 
-
-
-div {
-  border: 2px solid limegreen;
+#avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 5%;
+  box-shadow: inset 0 -3em 3em rgba(156, 156, 156, 0.1),
+  0 0  0 2px rgb(0, 0, 0),
+  0.3em 0.3em 1em rgba(39, 39, 39, 0.3);
 }
+
