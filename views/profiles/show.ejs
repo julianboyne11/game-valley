@@ -3,17 +3,19 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div id="name"><%= profile.name %></div>
   <div> 
     <img id="avatar"
       class="profile-avatar"
       src="<%=  profile.avatar %>" 
-      alt="<%= profile.name %>'s avatar"
+      alt="<%= profile.name %>"
     >
   </div>
-  <div><%= profile.name %></div>
-  <div>games liked: <% profile.likeGames.forEach(game => { %>
+  <div id="like-games">games liked: 
+    <% profile.likeGames.forEach(game => { %>
     <p><%= game.title %></p>
-  <% }) %> <div>
+    <% }) %>
+  <div>
 </main>
 
 <%- include('../partials/footer') %>
