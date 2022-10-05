@@ -20,6 +20,11 @@ body {
   margin: 0;
 }
 
+img {
+  height: 80px;
+  border-radius: 50%;
+}
+
 nav {
   background-color: #f6f6f6;
   color: #1a1a1a;
