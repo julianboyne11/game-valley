@@ -60,7 +60,11 @@ div {
   margin: 15px;
   justify-content: center;
   text-align: center;
-  padding: 15px;  
+  padding: 20px;  
+}
+
+#edit-button {
+  margin: 7px;
 }
 
 a {
@@ -206,6 +210,14 @@ select {
   align-items: center;
 }
 
+#add-console > a {
+  color: #FAFAFA;
+}
+
+#add-console > a:hover {
+  color: #107C10;
+}
+
 p {
   margin: auto;
 }
@@ -213,6 +225,8 @@ p {
 tr > td {
   padding: 10px;
 }
+
+
 
 
 
