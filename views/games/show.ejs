@@ -96,7 +96,6 @@
                 <% game.comments.forEach(function(comment) { %>
                   <% total += comment.rating %>
                   <tr>
-                    <td><%= user.profile.name %> said...</td>
                     <td><%= comment.createdAt.toLocaleDateString() %></td>
                     <td><%= comment.content %></td>
                     <td><%= comment.rating %></td>
