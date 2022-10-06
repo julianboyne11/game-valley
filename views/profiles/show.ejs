@@ -20,7 +20,6 @@
     <% } else { %>
       <h4>No Liked Games Yet</h4>
       <% } %>
-  <% if (games.length) { %>
   <div class="games-created"> 
     <div id="created">Games <%= profile.name %>'s  created:
     <% games.forEach(game => { %>
@@ -28,9 +27,6 @@
     <% }) %>
   </div>
   </div>
-  <% } else { %>
-    <h4>No Games created</h4>
-    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

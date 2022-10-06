@@ -6,7 +6,7 @@
   <div class="info">
     <div class="game-info">
       <div class="game-container">
-        <h1><%= title %></h1>
+        <h1 id="game-title"><%= title %></h1>
         <% if (game.owner.equals(user?.profile._id)) { %>
           <a href="/games/<%= game._id %>/edit">
             <button id="edit-button" class="btn">Edit Game</button>

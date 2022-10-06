@@ -41,6 +41,9 @@ main > div {
 }
 
 #created {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
   margin-top: 30px;
 }
 
