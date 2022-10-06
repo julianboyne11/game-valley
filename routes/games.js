@@ -12,7 +12,6 @@ router.post("/", isLoggedIn, gamesCtrl.create)
 router.post("/:id/comments", isLoggedIn, gamesCtrl.createComment)
 router.post("/:id/consoles", isLoggedIn, gamesCtrl.addToConsoles)
 router.put("/:id", isLoggedIn, gamesCtrl.update)
-
 router.delete("/:id", isLoggedIn, gamesCtrl.delete)
 
 

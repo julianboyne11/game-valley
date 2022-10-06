@@ -3,31 +3,30 @@
 <%- include('../partials/nav') %>
 <main>
   <section>
-  <div class="info">
-    <div class="game-info">
-      <div class="game-container">
-        <h1 id="game-title"><%= title %></h1>
-        <% if (game.owner.equals(user?.profile._id)) { %>
-          <a href="/games/<%= game._id %>/edit">
+    <div class="info">
+      <div class="game-info">
+        <div class="game-container">
+          <h1 id="game-title"><%= title %></h1>
+            <% if (game.owner.equals(user?.profile._id)) { %>
+            <a href="/games/<%= game._id %>/edit">
             <button id="edit-button" class="btn">Edit Game</button>
-          </a>
-          <% } %>
-          <p id="profile">Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
-          <div id="genre"><%= game.genre %></div>
-          <div id="releaseDate"><%= game.releaseDate.toDateString().slice(3) %></div>
-          <div id="description"><%= game.description %></div>
-          <div id="consoles">For:
-            <% game.consoles.forEach(console => { %>
-              <p><%= console.name %></p>
-            <% }) %>  
-          </div>
-          <% if (game.owner.equals(user?.profile._id)) { %>
-          <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-            <button id="delete-btn" class="btn btn btn-danger" type="submit">Delete Game</button>
-          </form>
+            </a>
+            <% } %>
+            <p id="profile">Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
+            <div id="genre"><%= game.genre %></div>
+            <div id="releaseDate"><%= game.releaseDate.toDateString().slice(3) %></div>
+            <div id="description"><%= game.description %></div>
+            <div id="consoles">For:
+              <% game.consoles.forEach(console => { %>
+                <p><%= console.name %></p>
+              <% }) %>  
+            </div>
+            <% if (game.owner.equals(user?.profile._id)) { %>
+            <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+              <button id="delete-btn" class="btn btn btn-danger" type="submit">Delete Game</button>
+            </form>
           <% } %>
         </div>
-
         <div class="consoles">
           <div>
             <% if (game.owner.equals(user?.profile._id)) { %>

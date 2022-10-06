@@ -29,7 +29,6 @@ function likeGame(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
     const alreadyLiked = profile.likeGames.some(game => {
-      console.log(game.toString());
       return game.toString() === req.params.id
     })
     if(!alreadyLiked) {
@@ -37,14 +36,13 @@ function likeGame(req, res) {
     }
     profile.save()
     .then(() => {
-
-        res.redirect(`/games/${req.params.id}`)
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect('/')
-      })
+      res.redirect(`/games/${req.params.id}`)
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
     .catch(err => {
       console.log(err)
       res.redirect('/')
