@@ -12,20 +12,20 @@
     >
   </div>
   <% if (profile.likeGames.length) { %>
-  <div id="like-games">Games I like: 
-    <% profile.likeGames.forEach(game => { %>
-    <p id="game-title"><%= game.title %></p>
-    <% }) %>
+    <div id="like-games">Games I like: 
+      <% profile.likeGames.forEach(game => { %>
+        <p id="game-title"><%= game.title %></p>
+      <% }) %>
   <div>
-    <% } else { %>
-      <h4>No Liked Games Yet</h4>
-      <% } %>
+  <% } else { %>
+    <h4>No Liked Games Yet</h4>
+  <% } %>
   <div class="games-created"> 
     <div id="created">Games <%= profile.name %>'s  created:
-    <% games.forEach(game => { %>
-      <p id="created-games"><%= game.title %></p>
-    <% }) %>
-  </div>
+      <% games.forEach(game => { %>
+        <p id="created-games"><%= game.title %></p>
+      <% }) %>
+    </div>
   </div>
 </main>
 

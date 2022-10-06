@@ -34,11 +34,11 @@
                 <select name="consoleId">
                   <% consoles.forEach(console => { %>
                     <option value="<%= console._id %>"><%= console.name %></option>
-                    <% }) %>
-                  </select>
-                  <button type="submit">Add Console to Game</button>
-                </form>
-                <div id="add-console">
+                  <% }) %>
+                </select>
+                <button type="submit">Add Console to Game</button>
+              </form>
+              <div id="add-console">
                 <a 
                   href="/consoles/new"
                   <%- title === 'Add Console' ? 'class="active"' : '' %>
@@ -46,9 +46,9 @@
                   ADD A CONSOLE
                 </a>
               </div>
-              <% } %>
+            <% } %>
           </div>
-          </div>
+        </div>
         <% if (alreadyLiked) { %>
           <h4 hidden>Liked the game?</h4>
           <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
@@ -67,26 +67,26 @@
         action="/games/<%= game._id %>/comments"
         method="POST"
         >
-        <div id="comment-area">
+          <div id="comment-area">
             <div>
               <h2 id="comment-title">Comments</h2>
             </div>
             <div id="comment-input">
               <textarea name="content" id="content-textarea" required></textarea>
               <label for="rating-select" id="rating">Rating:
-              <select name="rating" id="rating-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5" selected>5</option>
-              </select>
-            </label>
-              <button type="submit" id="comment-btn">Add Comment</button>
+                <select name="rating" id="rating-select">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+              </label>
+            <button type="submit" id="comment-btn">Add Comment</button>
             </div>
           </div>
-          </form>
-          <div id="comments">
+        </form>
+        <div id="comments">
           <% if (game.comments.length) { %>
             <table>
               <thead>
