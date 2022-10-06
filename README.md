@@ -30,7 +30,7 @@ Add game view
 -------------------------------------------------
 App View
 ----------------------------------------
-Home Page
+Home page view
 
 --------------
 ![Home page image.png](public/assets/screenshots/Screenshot%20(30).png)
