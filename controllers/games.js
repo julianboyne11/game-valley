@@ -42,11 +42,15 @@ function show(req, res) {
     .then(consoles => {
       Profile.findById(req.user.profile._id)
       .then(profile => {
+        const alreadyLiked = profile.likeGames.some(likedGame => {
+          return likedGame.toString() === req.params.id
+        })
         res.render("games/show", {
           title: `${game.title}`,
           game,
           consoles,
           profile,
+          alreadyLiked,
         })
       })
     })

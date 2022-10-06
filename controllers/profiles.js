@@ -25,9 +25,16 @@ function showProfile(req, res) {
 }
 
 function likeGame(req, res) {
+  console.log(req.params.id);
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.likeGames.push(req.params.id)
+    const alreadyLiked = profile.likeGames.some(game => {
+      console.log(game.toString());
+      return game.toString() === req.params.id
+    })
+    if(!alreadyLiked) {
+      profile.likeGames.push(req.params.id)
+    }
     profile.save()
     .then(() => {
 

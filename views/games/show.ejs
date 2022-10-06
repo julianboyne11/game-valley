@@ -50,10 +50,17 @@
               <% } %>
           </div>
           </div>
-      <h4>Liked the game?</h4>
-      <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
-        <button type="submit">Like</button>
-      </form>
+        <% if (alreadyLiked) { %>
+          <h4 hidden>Liked the game?</h4>
+          <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
+            <button type="submit" hidden>Like</button>
+          </form>
+        <% } else { %>
+            <h4 >Liked the game?</h4>
+            <form action="/profiles/<%= game._id %>/like-games?_method=PATCH" method="POST">
+            <button type="submit" >Like</button>
+          </form>
+        <% } %>
     </div>
     <div id="comment-container">
         <form 

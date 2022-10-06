@@ -35,7 +35,10 @@ Show game view
 --------------------------------------
 ![show image.png](public/assets/screenshots/Screenshot%20(34).png)
 
-
 ------------------------------------------------------
-
-
+Languages used
+--------
+- JavaScript
+- CSS
+- EJS
+-       
