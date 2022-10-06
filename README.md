@@ -3,7 +3,7 @@
 Games collection app where you can add games, comment and see other peoples games and there profile
 
 -----------------------------------------------
-Planing Material
+[Planing Material](https://trello.com/b/IMYdigod/game-valley)
 ----------------
 ERD
 
@@ -46,3 +46,6 @@ Languages used
 - GoogleOAuth      
 
 -----------------------------------------
+Ice-Box
+---------------------------------------------
+1 -
