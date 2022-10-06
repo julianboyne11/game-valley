@@ -41,4 +41,8 @@ Languages used
 - JavaScript
 - CSS
 - EJS
--       
+- Mongoose
+- MongoDB
+- GoogleOAuth      
+
+-----------------------------------------
