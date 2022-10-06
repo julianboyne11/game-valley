@@ -1,6 +1,8 @@
 [Game Valley](http://game-valley.fly.dev/)
 ===============================================
-Games collection app where you can add games, comment and see other peoples games and there profile
+Games collection app where you can add games, comment and see other peoples games and there profile.
+
+Chose to make this app because who doesn't like games right? I love the fact of having a collection of game that you like and seeing other people profiles and what they like.  
 
 -----------------------------------------------
 [Planing Material](https://trello.com/b/IMYdigod/game-valley)
@@ -56,4 +58,11 @@ Ice-Box
 
 4 - AAU I want to be able to add an image to my new game.
 
+5 - AAU I would like to add an about me in my profile if I wanted to show a little more about myself. 
+
 -----------------------
+
+Credits
+------
+- [Bootstrap](https://getbootstrap.com/)
+- [Google Fonts](https://fonts.google.com/)
