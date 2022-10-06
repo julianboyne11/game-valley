@@ -8,5 +8,9 @@ ERD
 
 Home page view
 
-![Index image.png](public/assets/screenshots/Screenshot%20(16).png)
+![Index image.png](public/assets/screenshots/Screenshot%20(15).png)
+
+Add game view
+
+![Add game image.png](public/assets/screenshots/Screenshot%20(16).png)
 
