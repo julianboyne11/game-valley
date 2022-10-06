@@ -23,12 +23,17 @@ form * {
 }
 
 h3 {
+  margin-left: 50px;
+  font-family: 'Yaldevi', sans-serif;
+  font-weight: bold;
   padding: 50px;
 }
 
 label {
+  font-family: 'Yaldevi', sans-serif;
   padding-left: 150px;
 }
+
 
 form > button {
   grid-column: span 2;
@@ -47,6 +52,8 @@ textarea {
 }
 
 input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
   0 0  0 2px rgb(105, 142, 94),
   0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -59,10 +66,15 @@ input {
 }
 
 #save-btn {
+  color: #FAFAFA;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-weight: bold;
+  background-color: gray;
+  border: 1px solid #107C10;
+  box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
+  0 0  0 2px #114a11,
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
   margin-right: 110px;
   font-size: 20px;
   width: 130px;
-  box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
-  0 0  0 2px rgb(105, 142, 94),
-  0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
