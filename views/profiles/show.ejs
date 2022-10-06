@@ -11,17 +11,26 @@
       alt="<%= profile.name %>"
     >
   </div>
+  <% if (profile.likeGames.length) { %>
   <div id="like-games">Games I like: 
     <% profile.likeGames.forEach(game => { %>
-    <p><%= game.title %></p>
+    <p id="game-title"><%= game.title %></p>
     <% }) %>
   <div>
+    <% } else { %>
+      <h4>No Liked Games Yet</h4>
+      <% } %>
+  <% if (games.length) { %>
   <div class="games-created"> 
-    <p>Games <%= profile.name %>'s' created:</p>
+    <div id="created">Games <%= profile.name %>'s  created:
     <% games.forEach(game => { %>
-      <p><%= game.title %></p>
+      <p id="created-games"><%= game.title %></p>
     <% }) %>
   </div>
+  </div>
+  <% } else { %>
+    <h4>No Games created</h4>
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

@@ -22,7 +22,7 @@
       href="/"
       <%- title === 'Games' ? 'class="active"' : '' %>
       >
-      All GAMES
+      ALL GAMES
       </a>
       <a 
       href="/games/new"
@@ -33,7 +33,7 @@
   <% } %>
     <% if (user) { %>
         <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
+        <button type="submit" id="logout-btn">Logout</button>
         </a>
       <% } else { %>
         <div 

@@ -13,26 +13,23 @@
           </a>
           <% } %>
           <p id="profile">Created by: <a href="/profiles/<%= game.owner._id %>"><%= game.owner ? game.owner.name : "Unknown" %></a></p>
-
           <div id="genre"><%= game.genre %></div>
           <div id="releaseDate"><%= game.releaseDate.toDateString().slice(3) %></div>
           <div id="description"><%= game.description %></div>
-    
           <div id="consoles">For:
             <% game.consoles.forEach(console => { %>
-              <p> <%= console.name %></p>
+              <p><%= console.name %></p>
             <% }) %>  
           </div>
           <% if (game.owner.equals(user?.profile._id)) { %>
           <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-            <button class="btn btn btn-danger" type="submit">Delete Game</button>
+            <button id="delete-btn" class="btn btn btn-danger" type="submit">Delete Game</button>
           </form>
           <% } %>
         </div>
 
         <div class="consoles">
           <div>
-
             <% if (game.owner.equals(user?.profile._id)) { %>
               <form id="add-consoles" action="/games/<%= game._id %>/consoles" method="POST">
                 <select name="consoleId">
@@ -66,10 +63,10 @@
         >
         <div id="comment-area">
             <div>
-              <h2>Comments</h2>
+              <h2 id="comment-title">Comments</h2>
             </div>
             <div id="comment-input">
-              <textarea name="content" id="content-textarea"></textarea>
+              <textarea name="content" id="content-textarea" required></textarea>
               <label for="rating-select" id="rating">Rating:
               <select name="rating" id="rating-select">
               <option value="1">1</option>

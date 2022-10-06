@@ -20,18 +20,42 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-family: 'Michroma', sans-serif;
+
+}
+
 #nav-avatar {
+  border: 1px solid black;
+  box-shadow: inset 0 -3em 3em rgba(88, 88, 88, 0.1),
+  0 0  0 2px #107C10,
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
   height: 80px;
   border-radius: 50%;
 }
 
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  border-bottom: 1px solid black;
+  background-color: #107C10;
   display: flex;
   align-items: center;
   padding: 10px;
   height:  90px;
+}
+
+nav > a:hover {
+  color: white;
+  font-weight: bolder;
+
+}
+
+nav > a.active {
+  color: black;
+  background-color: #1770177e;
+  box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
+  0 0  0 2px #1770177e,
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
+  font-weight: bolder;
 }
 
 main {
@@ -46,10 +70,26 @@ main {
 }
 
 nav > a {
+  text-align: center;
+  font-size: 20px;
   margin: 15px;
   text-decoration: none;
   padding: 5px;
   border-radius: 5px;
-  color: #424748;
+  color: #FAFAFA;;
 }
+
+#logout-btn {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  height: 45px;
+  text-align: center;
+  color: #FAFAFA;
+  box-shadow: inset 0 -3em 3em rgba(42, 40, 40, 0.1),
+  0 0  0 2px #1770177e,
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
+  font-weight: bold;
+  background-color: rgb(87, 87, 87);
+}
+
+
 

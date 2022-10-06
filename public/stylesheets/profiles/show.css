@@ -15,16 +15,47 @@ main > div {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 10px;
   margin: 20px;
 }
 
-#like-games {
-  flex-direction: column;
-  padding: 10px;
+#like-games  {
+  font-size: 25px;
+  font-family: 'Yaldevi', sans-serif;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+
+#game-title {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+#created-games {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+#created {
+  margin-top: 30px;
+}
+
+#created > p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: auto;
 }
 
 #name {
+  font-family: 'Michroma', sans-serif;
   font-size: 40px;
 }
 
