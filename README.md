@@ -53,7 +53,7 @@ Languages used
 -----------------------------------------
 Ice-Box
 ---------------------------------------------
-1 - AAU I want to be able to add an Image to the game so it can be related and easy the see what game it is.
+1 - AAU I want to be able to add an Image to the game so it can be related and easy the see what game is it.
 
 2 - As the comment owner I should be able to edit my comment if I change my mind.
 
