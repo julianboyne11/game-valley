@@ -67,3 +67,4 @@ Credits
 ------
 - [Bootstrap](https://getbootstrap.com/)
 - [Google Fonts](https://fonts.google.com/)
+- [Favicon](https://favicon.io/emoji-favicons/video-game/)
