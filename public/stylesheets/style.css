@@ -70,6 +70,7 @@ main {
 }
 
 nav > a {
+  font-family: 'Michroma', sans-serif;
   text-align: center;
   font-size: 20px;
   margin: 15px;
