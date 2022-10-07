@@ -25,7 +25,6 @@ function showProfile(req, res) {
 }
 
 function likeGame(req, res) {
-  console.log(req.params.id);
   Profile.findById(req.user.profile._id)
   .then(profile => {
     const alreadyLiked = profile.likeGames.some(game => {

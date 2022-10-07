@@ -61,6 +61,8 @@ Ice-Box
 
 4 - AAU I would like to add an about me section to my profile if I wanted to show a little more about myself. 
 
+5 - AAA I want to be able to delete a game if it's not an actual game or if it has any type of insulting words.
+
 -----------------------
 
 Credits
