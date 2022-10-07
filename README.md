@@ -45,6 +45,7 @@ Languages used
 --------
 - JavaScript
 - CSS
+- Express
 - EJS
 - Mongoose
 - MongoDB
